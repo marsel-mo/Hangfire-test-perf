@@ -25,6 +25,7 @@ builder.Services.AddHangfire(configuration => configuration
 
 builder.Services.AddHangfireServer(o =>
 {
+     o.WorkerCount = Environment.ProcessorCount * 100;
 });
 
 var app = builder.Build();
